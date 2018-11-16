@@ -28,3 +28,10 @@ The image frames of the dataset come in the form of video sequences!!!
 using ffmpeg (ffmpeg -i "<some_folder>/video_X.avi" -qscale:v 1 "<some_folder>/img_X_%%06d.jpg") to ensure valid correspondence between the annotations and the frames.
 
 using the script get_dataset_img.sh to get train images from video sequences.
+
+ffmpeg:
+ffmpeg -i *.avi -vf "select=between(n\,84\,208)*not(mod(n\,25))" -vsync 0 ./images/image_%06d.jpg
+  -vf select filter, between(n,*) means split from 84 frame to 208 frame
+                     not(mode(n\, K)) means output 1 image from every 25 frames 
+ffmpeg -i *.avi -r 1 -vf fps=fps=1 ./images/image_%06d.jpg
+    -vf fps=fps=1(-r 1) means the rate of screenshots is 1 frame per second
