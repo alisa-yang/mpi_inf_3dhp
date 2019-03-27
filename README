@@ -30,10 +30,11 @@ Use the following command to run the shell script in the background:
 
 
 4.
-select the directory that contains `README.txt`,`S1`..`S8`, etc.
+Select the directory that contains `README.txt`,`S1`..`S8`, etc.
 
-The image frames of the dataset are provided in the form of video sequences!!!
+The image frames of the dataset are given in the form of video sequences!!!
 Use the script `get_dataset_img.sh` provided in this repository to generate training images from video sequences.
+Be cautious that the generated images takes >100GB sapce.
 
 Note:
 The following command
