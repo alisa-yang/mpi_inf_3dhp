@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-
 import re
 import os
 import cv2
@@ -26,7 +25,7 @@ for sbj in subjects:
             print('\n...{}...'.format(img_dir))
             frames = os.listdir(img_dir)
             for frame in frames:
-                print('scaling frame {}'.format(frame))
+                print('scaling frame {}'.format(os.path.join(img_dir, frame)))
                 img_path = os.path.join(img_dir, frame)
                 img = cv2.imread(img_path)
                 img = cv2.resize(img, (dest_size, dest_size))
