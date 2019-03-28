@@ -1,7 +1,13 @@
+#!/usr/bin/env python3
+# -*- coding: UTF-8 -*-
+
+
 import re
 import os
 import cv2
 
+
+dest_size = 368  # the resized frame size
 
 with open('./conf.ig') as f:
     context = f.read()
@@ -23,6 +29,6 @@ for sbj in subjects:
                 print('scaling frame {}'.format(frame))
                 img_path = os.path.join(img_dir, frame)
                 img = cv2.imread(img_path)
-                img = cv2.resize(img, (368, 368))
+                img = cv2.resize(img, (dest_size, dest_size))
                 cv2.imwrite(img_path, img)
 print('done.')

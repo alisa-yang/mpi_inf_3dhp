@@ -30,11 +30,11 @@ Use the following command to run the shell script in the background:
 
 
 4.
-Select the directory that contains `README.txt`,`S1`..`S8`, etc.
+Select the directory that contains `README.txt`, `S1`..`S8`, etc.
 
 The image frames of the dataset are given in the form of video sequences!!!
 Use the script `get_dataset_img.sh` provided in this repository to generate training images from video sequences.
-Be cautious that the generated images takes >100GB sapce.
+Be cautious that the generated images will consume super huge storage space!!!
 
 Note:
 The following command
@@ -49,3 +49,8 @@ About ffmpeg:
 
     ffmpeg -i *.avi -r 1 -vf fps=fps=1 ./images/image_%06d.jpg
 `-vf fps=fps=1(-r 1)`: the rate of screenshot is 1 frame per second.
+
+
+5.
+To compress the frame images, run `scale_img.py` in the root path which contains `README.txt`, `S1`..`S8`, etc.
+This python script also uses `config` as the configuration file.
