@@ -37,6 +37,6 @@ The joint order corresponding to the coordinate order can be seen in `all_joint_
 
 9.
 In the coordinate system:
-    x-direction ！！ right(--★)
-    y-direction ！！ down(◎)
-    z-direction ！！ forwarding(obeying right-hand rule given x and y)
+    x-direction: right(-->)
+    y-direction: down(V)
+    z-direction: forwarding(obeying right-hand rule given x and y)
