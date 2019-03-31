@@ -6,7 +6,7 @@ import os
 import cv2
 
 
-dest_size = 368  # the resized frame size
+dest_size = 368  # the desired frame size
 
 with open('./conf.ig') as f:
     context = f.read()
