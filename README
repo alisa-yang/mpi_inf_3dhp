@@ -59,3 +59,7 @@ This python script also uses `config` as the configuration file.
 6.
 To extract 2D and 3D annotion data of joint positions from .mat files to hdf5 format, run `gen_h5.m`.
 Edit configuration of this MATLAB script by setting first two lines before running it.
+
+
+7.
+Run `gen_file_list.py` to generate `train.txt` and `test.txt` containing available image paths.
