@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
+# This script uses conf.ig as the configuration file
 
 import re
 import os
 import cv2
-
 
 dest_size = 368  # the desired frame size
 
@@ -15,7 +15,7 @@ with open('./conf.ig') as f:
     destination = re.split(r'\'', re.search(r'destination=[a-zA-Z0-9_./\'"]+', context).group())[1]
     subjects = re.split(r' ', re.sub(r'\( | \)|\(|\)', '',
                         re.search(r'subjects=\([0-9 ]+\)', context).group()[9:]))
-print('operate destination set to ' + destination)
+print('scale frame images in ' + destination)
 
 for sbj in subjects:
     for seq in [1, 2]:

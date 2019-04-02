@@ -30,7 +30,7 @@ Use the following command to run the shell script in the background:
 
 
 4.
-Select the directory that contains `README.txt`, `S1`..`S8`, etc.
+Select the root directory that contains `S1`..`S8`, `util`, etc.
 
 The image frames of the dataset are given in the form of video sequences!!!
 Use the script `get_dataset_img.sh` provided in this repository to generate training images from video sequences.
@@ -52,8 +52,7 @@ About ffmpeg:
 
 
 5.
-To compress the frame images, run `scale_img.py` in the root path which contains `README.txt`, `S1`..`S8`, etc.
-This python script also uses `config` as the configuration file.
+To compress the frame images, run `scale_img.py`.
 
 
 6.
