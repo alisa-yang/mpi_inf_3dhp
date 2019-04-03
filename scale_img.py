@@ -12,7 +12,8 @@ with open('./conf.ig') as f:
     context = f.read()
     ready_to_download = re.search(r'ready_to_download=.', context).group()[-1]
     assert ready_to_download != '0', 'Please read the documentation and edit the config file accordingly.'
-    destination = re.split(r'\'', re.search(r'destination=[a-zA-Z0-9_./\'"]+', context).group())[1]
+    destination = re.split(r'\'', re.search(r'destination=.*\n', context).group())[1]
+    destination = os.getcwd() if destination=='./' else destination
     subjects = re.split(r' ', re.sub(r'\( | \)|\(|\)', '',
                         re.search(r'subjects=\([0-9 ]+\)', context).group()[9:]))
 print('scale frame images in ' + destination)
