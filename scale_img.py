@@ -5,8 +5,17 @@
 import re
 import os
 import cv2
+from multiprocessing.dummy import Pool as ThreadPool
+
 
 dest_size = 368  # the desired frame size
+
+def scale_img(frame):
+    print('scaling frame {} in {}'.format(frame, img_dir))
+    img_path = os.path.join(img_dir, frame)
+    img = cv2.imread(img_path)
+    img = cv2.resize(img, (dest_size, dest_size))
+    cv2.imwrite(img_path, img)
 
 with open('./conf.ig') as f:
     context = f.read()
@@ -17,7 +26,6 @@ with open('./conf.ig') as f:
     subjects = re.split(r' ', re.sub(r'\( | \)|\(|\)', '',
                         re.search(r'subjects=\([0-9 ]+\)', context).group()[9:]))
 print('scale frame images in ' + destination)
-
 for sbj in subjects:
     for seq in [1, 2]:
         cam_dir_root = os.path.join(destination, 'S{}'.format(sbj), 'Seq{}'.format(seq), 'imageFrames')
@@ -25,10 +33,8 @@ for sbj in subjects:
             img_dir = os.path.join(cam_dir_root, cam)
             print('\n...{}...'.format(img_dir))
             frames = os.listdir(img_dir)
-            for frame in frames:
-                print('scaling frame {} in {}'.format(frame, img_dir))
-                img_path = os.path.join(img_dir, frame)
-                img = cv2.imread(img_path)
-                img = cv2.resize(img, (dest_size, dest_size))
-                cv2.imwrite(img_path, img)
+            pool = ThreadPool(os.cpu_count())
+            pool.map(scale_img, frames)
+            pool.close()
+            pool.join()
 print('done.')
