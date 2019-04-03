@@ -30,10 +30,8 @@ Use the following command to run the shell script in the background:
 
 
 4.
-Select the root directory that contains `S1`..`S8`, `util`, etc.
-
 The image frames of the dataset are given in the form of video sequences!!!
-Use the script `get_dataset_img.sh` provided in this repository to generate training images from video sequences.
+Use the script `get_dataset_img.sh` provided in this repository to extract frame images from video sequences.
 Be cautious that the generated images will consume super huge storage space!!!
 
 Note:
