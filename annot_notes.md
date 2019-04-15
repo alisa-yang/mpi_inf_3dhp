@@ -1,8 +1,8 @@
-# Notes about annotations
+# Annotations Notes
 
 #### 1
 
-In `annot.mat` contains: 
+`annot.mat` contains: 
 
 - annot2 (14x1 cell)
 - annot3 (14x1 cell)
