@@ -7,7 +7,7 @@ A **3-d** human skeleton pose annotation dataset released by Max Planck Institut
 
 ​	**2.1** Unzip, then read the `mpi_inf_3dhp/README.txt` file.
 
-​	**ATTENTION**
+​	**ATTENTION:**
 
 ​	You would need to read and review the configuration under `conf.ig` before you can proceed with downloading the dataset !!!
 
@@ -22,7 +22,7 @@ ready_to_download=1
 
 ​	**3.** Downloading takes a long time.
 
-**​	Optional**
+**​Optional:**
 
 ​	Use the following command to run the shell script in the background:
 
@@ -33,7 +33,7 @@ nohup sh get_dataset.sh &
 ​	**4.** The image frames of the dataset are given in the form of video sequences. Use the script `get_dataset_img.sh` provided in this repository to extract frame images from video sequences.
 Be cautious that the generated images will consume **super huge storage space**!!!
 
-​	**Note**
+​	**Note:**
 
 ​	The following command
 
