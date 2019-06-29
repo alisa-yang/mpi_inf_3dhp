@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script to fetch and unzip the available data.  
-# It uses config as the configuration file (duh!)
+# It uses conf.ig as the configuration file (duh!)
 echo "Reading configuration from ./config....." >&2
 source ./conf.ig
 if [[ $ready_to_download -eq 0 ]]; then
